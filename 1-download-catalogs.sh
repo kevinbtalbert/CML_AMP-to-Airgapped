@@ -3,6 +3,7 @@
 # This script downloads the official and/or community AMP
 # catalogs from the Cloudera official repo.
 # Ensure chmod +x 1-download-catalogs.sh if error
+# RUN: bash 1-download-catalogs.sh
 
 download_date=$(date +%Y-%m-%d)
 

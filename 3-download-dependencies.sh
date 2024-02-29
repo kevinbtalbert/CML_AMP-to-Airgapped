@@ -2,7 +2,8 @@
 
 # This script downloads the PyPi requirements for all downloaded
 # repos and enables offline (airgapped) installation of the wheels.
-# Ensure chmod +x 1-download-dependencies.sh if error
+# Ensure chmod +x 3-download-dependencies.sh if error
+# RUN: bash 3-download-dependencies.sh
 
 # USAGE: pip install --no-index --find-links=/path/to/pip_packages -r requirements.txt
 
