@@ -5,6 +5,8 @@ Download the Cloudera AMP catalog for an offline (airgapped) deployment of the A
 
 This project provides a set of shell scripts designed to facilitate the management of Python dependencies for offline environments. It aims to simplify the process of downloading and installing Python packages without an internet connection, leveraging the GitHub API and local file storage. This solution is particularly useful for deploying Python applications in isolated or secure environments where direct access to PyPI or other online repositories is not possible.
 
+#### NOTE! Customers will need to manually adjust the requirements python files in the AMPs to ensure pip calls to the offline repo: ```pip install --no-index --find-links=/path/to/pip_packages -r requirements.txt``` This ensures local pull of downloaded dependencies instead of PyPi search resolution.
+
 ## Overview
 
 The project consists of several components:
