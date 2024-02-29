@@ -9,10 +9,11 @@ download_date=$(date +%Y-%m-%d)
 download_catalog() {
     local yaml_url=$1
     local prefix=$2
-    local yaml_file="/root/${prefix}-amp-catalog-${download_date}.yaml"
+    # Save the YAML file in the current working directory
+    local yaml_file="${prefix}-amp-catalog-${download_date}.yaml"
 
     echo "Downloading YAML from $yaml_url to $yaml_file..."
-    wget $yaml_url -O $yaml_file
+    wget $yaml_url -O "$yaml_file"
 
     if [ $? -eq 0 ]; then
         echo "Successfully downloaded to $yaml_file"
