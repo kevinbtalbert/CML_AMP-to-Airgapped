@@ -9,6 +9,10 @@
 
 clone_repos_from_yaml() {
     local yaml_file=$1
+    local repos_dir="repositories"  # Define the directory to store repositories
+
+    # Ensure the repositories directory exists
+    mkdir -p "$repos_dir"
 
     if [ ! -f "$yaml_file" ]; then
         echo "YAML file does not exist: $yaml_file"
@@ -29,8 +33,8 @@ clone_repos_from_yaml() {
             repo_name=$(basename "${git_url}" .git)
 
             echo "Downloading $repo_name from $git_url..."
-            # Clone the repository
-            git clone "$git_url" "$repo_name"
+            # Clone the repository into the repositories directory
+            git clone "$git_url" "$repos_dir/$repo_name"
         fi
     done
 }

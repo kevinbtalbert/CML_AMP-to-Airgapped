@@ -7,6 +7,7 @@
 
 # USAGE: pip install --no-index --find-links=/path/to/pip_packages -r requirements.txt
 
+
 # Current directory from which the script is run
 current_dir=$(pwd)
 
@@ -14,12 +15,9 @@ current_dir=$(pwd)
 packages_dir="${current_dir}/pip_packages"
 mkdir -p "$packages_dir"
 
-# Recursively find and process all 'requirements.txt' files
-find "$current_dir" -type f -name 'requirements.txt' | while read requirements_file; do
+# Recursively find and process all 'requirements.txt' files within the 'repositories' directory
+find "${current_dir}/repositories" -type f -name 'requirements.txt' | while read requirements_file; do
     echo "Processing requirements file: $requirements_file"
-
-    # Directory where the requirements.txt file is located
-    requirements_dir=$(dirname "$requirements_file")
 
     # Download dependencies listed in 'requirements.txt'
     pip download -r "$requirements_file" -d "$packages_dir" --exists-action=i
