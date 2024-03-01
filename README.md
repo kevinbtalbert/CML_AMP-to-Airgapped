@@ -1,6 +1,8 @@
 # CML AMP to Airgapped
 Download the Cloudera AMP catalog for an offline (airgapped) deployment of the AMP catalog.
 
+This sister repository will enable hosting an HTTP server (airgapped) for the AMP Catalog files: https://github.com/kevinbtalbert/CML_AMP_Airgap_HTTP_WebServer
+
 ![](/cml-airgapped.png)
 
 This project provides a set of shell scripts designed to facilitate the management of Python dependencies for offline environments. It aims to simplify the process of downloading and installing Python packages without an internet connection, leveraging the GitHub API and local file storage. This solution is particularly useful for deploying Python applications in isolated or secure environments where direct access to PyPI or other online repositories is not possible.
